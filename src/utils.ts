@@ -6,7 +6,7 @@ const isString = (text: unknown): text is string => {
 
 const parseComment = (comment: unknown): string => {
     if (!isString(comment)) {
-        throw new Error('Incorrect or missing comment');
+        throw new Error('Incorrect comment');
     }
 
     return comment;
@@ -18,14 +18,14 @@ const isDate = (date: string): boolean => {
 
 const parseDate = (date: unknown): string => {
     if (!isString(date) || !isDate(date)) {
-        throw new Error('Incorrect or missing date: ' + date);
+        throw new Error('Incorrect date: ' + date);
     }
     return date;
 };
 
 const parseWeather = (weather: unknown): Weather => {
     if (!isString(weather) || !isWeather(weather)) {
-        throw new Error('Incorrect or missing weather: ' + weather);
+        throw new Error('Incorrect weather: ' + weather);
     }
     return weather;
 };
@@ -40,7 +40,7 @@ const isVisibility = (param: string): param is Visibility => {
 
 const parseVisibility = (visibility: unknown): Visibility => {
     if (!isString(visibility) || !isVisibility(visibility)) {
-        throw new Error('Incorrect or missing visibility: ' + visibility);
+        throw new Error('Incorrect visibility: ' + visibility);
     }
     return visibility;
 };
